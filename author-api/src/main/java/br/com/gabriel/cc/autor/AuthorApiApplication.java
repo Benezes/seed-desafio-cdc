@@ -1,4 +1,4 @@
-package br.com.gabriel;
+package br.com.gabriel.cc.autor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
