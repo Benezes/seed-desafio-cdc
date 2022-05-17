@@ -4,42 +4,42 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import br.com.gabriel.cc.autor.entity.AutorEntity;
+import br.com.gabriel.cc.autor.entity.AuthorEntity;
 
-public class AutorDTO implements Serializable {
+public class AuthorDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
 
-	@NotNull(message = "o campo nome é obrigatório")
-	private String nome;
+	@NotBlank(message = "the field name is mandatory")
+	private String name;
 
-	@NotNull(message = "o campo email é obrigatório")
-	@Email(message = "")
+	@NotBlank(message = "the field email is mandatory")
+	@Email(message = "insert a valid email")
 	private String email;
 
-	@NotNull(message = "o campo descrição é obrigatório")
-	@Size(max = 400, message = "")
-	private String descrição;
+	@NotBlank(message = "the field description is mandatory")
+	@Size(max = 400, message = "the description field must contain up to 400 characters")
+	private String description;
 
-	@JsonFormat(pattern = "dd/MM/yyyy  HH:mm:ss")
-	private LocalDateTime registro = LocalDateTime.now();
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+	private LocalDateTime record = LocalDateTime.now();
 
-	public AutorDTO() {
+	public AuthorDTO() {
 		super();
 	}
 
-	public AutorDTO(AutorEntity entity) {
+	public AuthorDTO(AuthorEntity entity) {
 		this.id = entity.getId();
-		this.nome = entity.getNome();
+		this.name = entity.getNome();
 		this.email = entity.getEmail();
-		this.descrição = entity.getDescrição();
-		this.registro = entity.getRegistro();
+		this.description = entity.getDescrição();
+		this.record = entity.getRegistro();
 	}
 
 	public Long getId() {
@@ -51,11 +51,11 @@ public class AutorDTO implements Serializable {
 	}
 
 	public String getNome() {
-		return nome;
+		return name;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.name = nome;
 	}
 
 	public String getEmail() {
@@ -67,19 +67,19 @@ public class AutorDTO implements Serializable {
 	}
 
 	public String getDescrição() {
-		return descrição;
+		return description;
 	}
 
 	public void setDescrição(String descrição) {
-		this.descrição = descrição;
+		this.description = descrição;
 	}
 
 	public LocalDateTime getRegistro() {
-		return registro;
+		return record;
 	}
 
 	public void setRegistro(LocalDateTime registro) {
-		this.registro = registro;
+		this.record = registro;
 	}
 
 }

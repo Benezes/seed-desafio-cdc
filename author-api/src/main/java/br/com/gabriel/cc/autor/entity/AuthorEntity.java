@@ -9,31 +9,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.gabriel.cc.autor.dto.AutorDTO;
+import br.com.gabriel.cc.autor.dto.AuthorDTO;
 
 @Entity
 @Table(name = "tb_autor")
-public class AutorEntity implements Serializable {
+public class AuthorEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
+	private String name;
 	private String email;
-	private String descrição;
-	private LocalDateTime registro = LocalDateTime.now();
+	private String description;
+	private LocalDateTime record = LocalDateTime.now();
 
-	public AutorEntity() {
+	public AuthorEntity() {
 		super();
 	}
 
-	public AutorEntity(AutorDTO dto) {
+	public AuthorEntity(AuthorDTO dto) {
 		this.id = dto.getId();
-		this.nome = dto.getNome();
+		this.name = dto.getNome();
 		this.email = dto.getEmail();
-		this.descrição = dto.getDescrição();
-		this.registro = dto.getRegistro();
+		this.description = dto.getDescrição();
+		this.record = dto.getRegistro();
 	}
 
 	public Long getId() {
@@ -45,11 +45,11 @@ public class AutorEntity implements Serializable {
 	}
 
 	public String getNome() {
-		return nome;
+		return name;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.name = nome;
 	}
 
 	public String getEmail() {
@@ -61,15 +61,15 @@ public class AutorEntity implements Serializable {
 	}
 
 	public String getDescrição() {
-		return descrição;
+		return description;
 	}
 
 	public LocalDateTime getRegistro() {
-		return registro;
+		return record;
 	}
 
 	public void setRegistro(LocalDateTime registro) {
-		this.registro = registro;
+		this.record = registro;
 	}
 
 }

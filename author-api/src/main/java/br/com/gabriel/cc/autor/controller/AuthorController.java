@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.gabriel.cc.autor.dto.AutorDTO;
-import br.com.gabriel.cc.autor.service.AutorService;
+import br.com.gabriel.cc.autor.dto.AuthorDTO;
+import br.com.gabriel.cc.autor.service.AuthorService;
 
 @RestController
-@RequestMapping(value = "/autores")
-public class AutorController {
+@RequestMapping(value = "/authors")
+public class AuthorController {
 
 	@Autowired
-	private AutorService autorService;
+	private AuthorService authorService;
 
 	@PostMapping
-	public ResponseEntity<AutorDTO> save(@RequestBody @Valid AutorDTO dto) {
-		return ResponseEntity.status(HttpStatus.OK).body(autorService.salvarAutor(dto));
+	public ResponseEntity<AuthorDTO> save(@RequestBody @Valid AuthorDTO dto) {
+		return ResponseEntity.status(HttpStatus.OK).body(authorService.salvarAuthor(dto));
 	}
 }

@@ -3,17 +3,17 @@ package br.com.gabriel.cc.autor.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.gabriel.cc.autor.dto.AutorDTO;
-import br.com.gabriel.cc.autor.entity.AutorEntity;
-import br.com.gabriel.cc.autor.repository.AutorRepository;
+import br.com.gabriel.cc.autor.dto.AuthorDTO;
+import br.com.gabriel.cc.autor.entity.AuthorEntity;
+import br.com.gabriel.cc.autor.repository.AuthorRepository;
 
 @Service
-public class AutorService {
+public class AuthorService {
 
 	@Autowired
-	private AutorRepository authorRepository;
+	private AuthorRepository authorRepository;
 
-	public AutorDTO salvarAutor(AutorDTO dto) {
-		return new AutorDTO(authorRepository.save(new AutorEntity(dto)));
+	public AuthorDTO salvarAuthor(AuthorDTO dto) {
+		return new AuthorDTO(authorRepository.save(new AuthorEntity(dto)));
 	}
 }
