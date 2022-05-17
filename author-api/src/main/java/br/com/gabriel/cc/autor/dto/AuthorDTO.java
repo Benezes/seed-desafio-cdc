@@ -36,26 +36,22 @@ public class AuthorDTO implements Serializable {
 
 	public AuthorDTO(AuthorEntity entity) {
 		this.id = entity.getId();
-		this.name = entity.getNome();
+		this.name = entity.getName();
 		this.email = entity.getEmail();
-		this.description = entity.getDescrição();
-		this.record = entity.getRegistro();
+		this.description = entity.getDescription();
+		this.record = entity.getRecord();
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNome() {
+	public String getName() {
 		return name;
 	}
 
-	public void setNome(String nome) {
-		this.name = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -66,20 +62,20 @@ public class AuthorDTO implements Serializable {
 		this.email = email;
 	}
 
-	public String getDescrição() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescrição(String descrição) {
-		this.description = descrição;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public LocalDateTime getRegistro() {
+	public LocalDateTime getRecord() {
 		return record;
 	}
 
-	public void setRegistro(LocalDateTime registro) {
-		this.record = registro;
+	public void setRecord(LocalDateTime record) {
+		this.record = record;
 	}
 
 }

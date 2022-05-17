@@ -22,6 +22,6 @@ public class AuthorController {
 
 	@PostMapping
 	public ResponseEntity<AuthorDTO> save(@RequestBody @Valid AuthorDTO dto) {
-		return ResponseEntity.status(HttpStatus.OK).body(authorService.salvarAuthor(dto));
+		return ResponseEntity.status(HttpStatus.OK).body(authorService.saveAuthor(dto));
 	}
 }

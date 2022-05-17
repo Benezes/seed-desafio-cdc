@@ -13,7 +13,7 @@ public class AuthorService {
 	@Autowired
 	private AuthorRepository authorRepository;
 
-	public AuthorDTO salvarAuthor(AuthorDTO dto) {
+	public AuthorDTO saveAuthor(AuthorDTO dto) {
 		return new AuthorDTO(authorRepository.save(new AuthorEntity(dto)));
 	}
 }
