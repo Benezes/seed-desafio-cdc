@@ -3,7 +3,7 @@ package br.com.gabriel.cc.autor.service;
 import br.com.gabriel.cc.autor.dto.AuthorDTO;
 import br.com.gabriel.cc.autor.entity.AuthorEntity;
 import br.com.gabriel.cc.autor.repository.AuthorRepository;
-import br.com.gabriel.cc.autor.service.exception.EmailDuplicatedException;
+import br.com.gabriel.cc.autor.service.exception.ValueDuplicatedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class AuthorService {
 
     private void checkDuplicatedEmail(AuthorDTO dto) {
         if (authorRepository.findAuthorByEmail(dto.getEmail()) != null) {
-            throw new EmailDuplicatedException(EMAIL_ALREADY_EXIST);
+            throw new ValueDuplicatedException(EMAIL_ALREADY_EXIST);
         }
     }
 }

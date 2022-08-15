@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import br.com.gabriel.cc.autor.dto.AuthorDTO;
 
 @Entity
-@Table(name = "tb_autor")
+@Table(name = "tb_author")
 public class AuthorEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 

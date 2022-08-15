@@ -1,6 +1,6 @@
 package br.com.gabriel.cc.autor.controller.exception;
 
-import br.com.gabriel.cc.autor.service.exception.EmailDuplicatedException;
+import br.com.gabriel.cc.autor.service.exception.ValueDuplicatedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -30,14 +30,14 @@ public class HandlerController {
         return ResponseEntity.status(status).body(err);
     }
 
-    @ExceptionHandler(EmailDuplicatedException.class)
-    public ResponseEntity<StandardError> emailDuplicated(EmailDuplicatedException e, HttpServletRequest request) {
+    @ExceptionHandler(ValueDuplicatedException.class)
+    public ResponseEntity<StandardError> emailDuplicated(ValueDuplicatedException e, HttpServletRequest request) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         StandardError err = new StandardError();
 
         err.setTimestamp(Instant.now());
         err.setStatus(status.value());
-        err.setError("Validation exception");
+        err.setError("Duplicated value exception");
         err.setPath(request.getRequestURI());
         err.setMessage(e.getMessage());
 
