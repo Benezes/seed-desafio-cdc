@@ -10,19 +10,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthorService {
 
-    public static final String EMAIL_ALREADY_EXIST = "e-mail already exist";
+	public static final String EMAIL_ALREADY_EXIST = "e-mail already exist";
 
-    @Autowired
-    private AuthorRepository authorRepository;
+	@Autowired
+	private AuthorRepository authorRepository;
 
-    public AuthorDTO saveAuthor(AuthorDTO dto) {
-        checkDuplicatedEmail(dto);
-        return new AuthorDTO(authorRepository.save(new AuthorEntity(dto)));
-    }
+	public AuthorDTO saveAuthor(AuthorDTO dto) {
+		checkDuplicatedEmail(dto);
+		return new AuthorDTO(authorRepository.save(new AuthorEntity(dto)));
+	}
 
-    private void checkDuplicatedEmail(AuthorDTO dto) {
-        if (authorRepository.findAuthorByEmail(dto.getEmail()) != null) {
-            throw new ValueDuplicatedException(EMAIL_ALREADY_EXIST);
-        }
-    }
+	private void checkDuplicatedEmail(AuthorDTO dto) {
+		if (authorRepository.findAuthorByEmail(dto.getEmail()) != null) {
+			throw new ValueDuplicatedException(EMAIL_ALREADY_EXIST);
+		}
+	}
 }

@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b63c47e-b692-4802-a274-2e4383204d09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/author-api/src/main/java/br/com/gabriel/cc/autor/service/exception/ValueDuplicatedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/author-api/src/main/java/br/com/gabriel/cc/autor/controller/exception/HandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/author-api/src/main/java/br/com/gabriel/cc/autor/controller/exception/HandlerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/author-api/src/main/java/br/com/gabriel/cc/autor/entity/AuthorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/author-api/src/main/java/br/com/gabriel/cc/autor/entity/AuthorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/author-api/src/main/java/br/com/gabriel/cc/autor/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/author-api/src/main/java/br/com/gabriel/cc/autor/service/AuthorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/author-api/src/main/java/br/com/gabriel/cc/autor/service/exception/EmailDuplicatedException.java" beforeDir="false" />
-    </list>
+    <list default="true" id="6b63c47e-b692-4802-a274-2e4383204d09" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

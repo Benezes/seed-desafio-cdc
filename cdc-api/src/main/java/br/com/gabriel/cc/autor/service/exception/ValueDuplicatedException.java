@@ -1,11 +1,13 @@
 package br.com.gabriel.cc.autor.service.exception;
 
 public class ValueDuplicatedException extends RuntimeException {
-    public ValueDuplicatedException(String msg) {
-        super(msg);
-    }
+	private static final long serialVersionUID = 1L;
 
-    public ValueDuplicatedException() {
+	public ValueDuplicatedException(String msg) {
+		super(msg);
+	}
 
-    }
+	public ValueDuplicatedException() {
+
+	}
 }

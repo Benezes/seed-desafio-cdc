@@ -1,63 +1,58 @@
 package br.com.gabriel.cc.autor.entity;
 
-import br.com.gabriel.cc.autor.dto.CategoryDTO;
-
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import br.com.gabriel.cc.autor.dto.CategoryDTO;
 
 @Entity
 @Table(name = "tb_category")
 public class CategoryEntity implements Serializable {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nameCategory;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String nameCategory;
 
-    public CategoryEntity(CategoryDTO categoryDTO) {
-        this.id = categoryDTO.getId();
-        this.nameCategory = categoryDTO.getNameCategory();
-    }
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "book_id")
+	private BookEntity book;
 
-    public CategoryEntity() {
-    }
+	public CategoryEntity(CategoryDTO categoryDTO) {
+		this.id = categoryDTO.getId();
+		this.nameCategory = categoryDTO.getNameCategory();
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public CategoryEntity() {
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getNameCategory() {
-        return nameCategory;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setNameCategory(String nameCategory) {
-        this.nameCategory = nameCategory;
-    }
+	public String getNameCategory() {
+		return nameCategory;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CategoryEntity that = (CategoryEntity) o;
-        return id.equals(that.id);
-    }
+	public void setNameCategory(String nameCategory) {
+		this.nameCategory = nameCategory;
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+	public BookEntity getBook() {
+		return book;
+	}
 
-    @Override
-    public String toString() {
-        return "CategoryEntity{" +
-                "id=" + id +
-                ", nameCategory='" + nameCategory + '\'' +
-                '}';
-    }
 }
